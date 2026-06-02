@@ -4,7 +4,7 @@ on:
   push:
     branches: [ main ]
     paths:
-      - 'Eksperimen_SML_Dika-Ramadani/preprocessing/**'
+      - 'preprocessing/**'
   workflow_dispatch:
 
 jobs:
@@ -28,10 +28,10 @@ jobs:
 
     - name: Run Preprocessing Script
       run: |
-        python Eksperimen_SML_Dika-Ramadani/preprocessing/porter-delivery-time-estimation_preprocessing/automate_Dika-Ramadani.py
+        python preprocessing/porter-delivery-time-estimation_preprocessing/automate_Dika-Ramadani.py
 
     - name: Upload Preprocessed Artifact
       uses: actions/upload-artifact@v4
       with:
         name: preprocessed-dataset
-        path: Eksperimen_SML_Dika-Ramadani/preprocessing/porter-delivery-time-estimation_preprocessing/porter_delivery_preprocessed.csv
+        path: preprocessing/porter-delivery-time-estimation_preprocessing/porter_delivery_preprocessed.csv
