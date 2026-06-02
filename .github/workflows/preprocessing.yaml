@@ -4,8 +4,8 @@ on:
   push:
     branches: [ main ]
     paths:
-      - 'preprocessing/**'
-  workflow_dispatch:
+      - '**' # Memastikan berkas apa pun yang di-push akan otomatis memicu run
+  workflow_dispatch: # Tetap mempertahankan tombol manual jika sewaktu-waktu butuh
 
 jobs:
   run-preprocessing:
@@ -27,7 +27,7 @@ jobs:
 
     - name: Run Preprocessing Script
       run: |
-        python preprocessing/porter-delivery-time-estimation_preprocessing/automate_Dika-Ramadani.py
+        python preprocessing/automate_Dika-Ramadani.py
 
     - name: Upload Preprocessed Artifact
       uses: actions/upload-artifact@v4
